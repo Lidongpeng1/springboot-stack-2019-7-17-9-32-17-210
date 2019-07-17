@@ -24,21 +24,4 @@ public class CriminalCaseService {
         return repository.findById(criminalCaseId);
     }
 
-    public List<CriminalCase> findAllSortedByTime() {
-        Sort sort = new Sort(Sort.Direction.DESC, "time");
-        return repository.findAll(sort);
-    }
-
-    public List<CriminalCase> findAllByName(String name) {
-        ExampleMatcher matcher = ExampleMatcher.matching()
-                .withIgnorePaths("id", "time");
-        CriminalCase criminalCase = new CriminalCase();
-        criminalCase.setName(name);
-        Example<CriminalCase> example = Example.of(criminalCase, matcher);
-        return repository.findAll(example);
-    }
-
-    public void deleteById(int criminalCaseId) {
-        repository.deleteById(criminalCaseId);
-    }
 }
