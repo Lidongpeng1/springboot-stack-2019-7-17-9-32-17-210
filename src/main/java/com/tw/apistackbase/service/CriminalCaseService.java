@@ -24,4 +24,10 @@ public class CriminalCaseService {
         return repository.findById(criminalCaseId);
     }
 
+    public List<CriminalCase> findAllSortedByTime() {
+        Sort sort = new Sort(Sort.Direction.DESC, "time");
+        return repository.findAll(sort);
+    }
+
+
 }
