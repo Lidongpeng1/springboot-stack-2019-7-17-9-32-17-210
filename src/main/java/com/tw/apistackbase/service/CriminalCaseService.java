@@ -41,5 +41,4 @@ public class CriminalCaseService {
     public void deleteById(int criminalCaseId) {
         repository.deleteById(criminalCaseId);
     }
-
 }

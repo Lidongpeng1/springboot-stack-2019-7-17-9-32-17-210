@@ -11,8 +11,8 @@ import java.util.Optional;
 public class ProcuratorateService {
     @Autowired
     private ProcuratorateRepository repository;
+
     public Optional<Procuratorate> findById(int id) {
         return repository.findById(id);
     }
-
 }
